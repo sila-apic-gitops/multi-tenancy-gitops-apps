@@ -26,7 +26,7 @@ spec:
           ibmapicmgmtinstance:
             name: management
             spec:
-              version: 10.0.6.0-3968
+              version: 10.0.7.0-5560
               profile: n3xc4.m16
               portal:
                 admin:
@@ -73,5 +73,5 @@ spec:
                 secretName: management-admin-credentials
               license:
                 accept: true
-                license: L-RJON-BZEP9N
+                license: L-MMBZ-295QZQ
                 use: production
