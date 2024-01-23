@@ -13,6 +13,6 @@ resources:
 - roles/rolebinding.yaml
 
 # Secrets
-# - secrets/apic-pipeline-git.yaml
+- secrets/apic-pipeline-git.yaml
 # - secrets/apic-config-email-server.yaml
 # - secrets/apic-pipeline-provider-org.yaml

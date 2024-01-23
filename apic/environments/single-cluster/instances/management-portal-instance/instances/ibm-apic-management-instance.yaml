@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1beta1
 kind: Application
 metadata:
   name: ibm-apic-management-instance
@@ -26,7 +26,7 @@ spec:
           ibmapicmgmtinstance:
             name: management
             spec:
-              version: 10.0.7.0-5560
+              version: 10.0.5.5-6227
               profile: n3xc4.m16
               portal:
                 admin:
