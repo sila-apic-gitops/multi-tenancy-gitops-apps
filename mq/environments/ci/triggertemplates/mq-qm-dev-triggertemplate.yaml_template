@@ -6,7 +6,7 @@ metadata:
   name: mq-qm-post-dev
 spec:
   resourcetemplates:
-    - apiVersion: tekton.dev/v1beta1
+    - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
       metadata:
         annotations:

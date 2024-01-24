@@ -1,4 +1,4 @@
-apiVersion: mq.ibm.com/v1beta1
+apiVersion: mq.ibm.com/v1alpha1
 kind: QueueManager
 metadata:
   name: qm1

@@ -1,4 +1,4 @@
-apiVersion: appconnect.ibm.com/v1beta1
+apiVersion: appconnect.ibm.com/v1alpha1
 kind: IntegrationServer
 metadata:
   name: ${name}

@@ -1,4 +1,4 @@
-apiVersion: processmining.ibm.com/v1beta1
+apiVersion: processmining.ibm.com/v1alpha1
 kind: ProcessMining
 metadata:
   name: process-mining-prod

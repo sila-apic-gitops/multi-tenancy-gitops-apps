@@ -11,7 +11,7 @@ spec:
   - description: The git repository url
     name: gitrepositoryurl
   resourcetemplates:
-  - apiVersion: tekton.dev/v1beta1
+  - apiVersion: tekton.dev/v1alpha1
     kind: PipelineRun
     metadata:
       generateName: mq-qm-dev-
