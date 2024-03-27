@@ -1,4 +1,4 @@
-apiVersion: triggers.tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v11
 kind: TriggerTemplate
 metadata:
   labels:
@@ -11,7 +11,7 @@ spec:
   - description: The git repository url
     name: gitrepositoryurl
   resourcetemplates:
-  - apiVersion: tekton.dev/v1alpha1
+  - apiVersion: tekton.dev/v11
     kind: PipelineRun
     metadata:
       generateName: mq-spring-app-dev-

@@ -1,4 +1,4 @@
-apiVersion: triggers.tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v11
 kind: EventListener
 metadata:
   name: mq-spring-app-post-stage

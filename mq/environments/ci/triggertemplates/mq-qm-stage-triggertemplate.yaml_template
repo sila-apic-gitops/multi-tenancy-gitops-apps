@@ -1,4 +1,4 @@
-apiVersion: triggers.tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v11
 kind: TriggerTemplate
 metadata:
   labels:
@@ -6,7 +6,7 @@ metadata:
   name: mq-qm-post-stage
 spec:
   resourcetemplates:
-    - apiVersion: tekton.dev/v1alpha1
+    - apiVersion: tekton.dev/v11
       kind: PipelineRun
       metadata:
         annotations:

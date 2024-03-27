@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1alpha1
+apiVersion: tekton.dev/v11
 kind: Task
 metadata:
   name: ibm-helm-release-v2-6-13
