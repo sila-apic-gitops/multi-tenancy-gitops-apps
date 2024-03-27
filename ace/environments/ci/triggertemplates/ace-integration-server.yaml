@@ -1,4 +1,4 @@
-apiVersion: triggers.tekton.dev/v11
+apiVersion: triggers.tekton.dev/v1
 kind: TriggerTemplate
 metadata:
   name: ace-integration-server
@@ -9,7 +9,7 @@ spec:
     - name: git-org
       description: Login name of the origanisation
   resourcetemplates:
-    - apiVersion: tekton.dev/v11
+    - apiVersion: tekton.dev/v1
       kind: PipelineRun
       metadata:
         generateName: ace-integration-server-$(tt.params.source-repo)-

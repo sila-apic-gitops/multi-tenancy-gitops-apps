@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-gitops-edge-v2-6-13
@@ -175,7 +175,7 @@ spec:
           echo "Edge Service registered"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-operator-bundle-v2-6-13
@@ -303,7 +303,7 @@ spec:
         echo -n "${BUNDLE_IMG_BASE}" > $(results.bundle-image-url.path)
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-gradle-pact-verify-v2-6-13
@@ -414,7 +414,7 @@ spec:
             -Ppact.verifier.publishResults=true
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-health-check-mq-v2-6-13
@@ -492,7 +492,7 @@ spec:
           fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-build-tag-push-v2-6-13
@@ -616,7 +616,7 @@ spec:
         buildah --storage-driver=$(params.STORAGE_DRIVER) push --tls-verify=$(params.TLSVERIFY) --digestfile ./image-digest ${APP_IMAGE} docker://${APP_IMAGE}
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-dockerfile-lint-v2-6-13
@@ -717,7 +717,7 @@ spec:
         fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-operator-catalog-gitops-v2-6-13
@@ -964,7 +964,7 @@ spec:
         git push -v
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-img-scan-trivy-v2-6-13
@@ -1060,7 +1060,7 @@ spec:
           fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-health-check-v2-6-13
@@ -1148,7 +1148,7 @@ spec:
           echo "====================================================================="
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-smoke-tests-mq-v2-6-13
@@ -1439,7 +1439,7 @@ spec:
           kubectl delete -n ${APP_NAMESPACE} -f ./release.yaml
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-nodejs-test-v2-6-13
@@ -1599,7 +1599,7 @@ spec:
 
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-img-release-v2-6-13
@@ -1679,7 +1679,7 @@ spec:
         set -x
         echo -n "${IMAGE_TO}" | tee $(results.image-url.path)
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-golang-test-v2-6-13
@@ -1793,7 +1793,7 @@ spec:
           fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-img-scan-ibm-v2-6-13
@@ -1905,7 +1905,7 @@ spec:
           fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-build-tag-push-ace-bar-v2-6-13
@@ -2044,7 +2044,7 @@ spec:
       buildah --storage-driver=$(params.STORAGE_DRIVER) push --tls-verify=$(params.TLSVERIFY) --digestfile ./image-digest ${APP_IMAGE} docker://${APP_IMAGE}
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-java-gradle-test-v2-6-13
@@ -2165,7 +2165,7 @@ spec:
           fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-operator-test-v2-6-13
@@ -2228,7 +2228,7 @@ spec:
         make test
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-operator-catalog-build-v2-6-13
@@ -2414,7 +2414,7 @@ spec:
         buildah --storage-driver=$(params.STORAGE_DRIVER) push --tls-verify=$(params.TLSVERIFY) --digestfile ./image-digest ${APP_IMAGE} docker://${IMAGE_TO}
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-sonar-test-v2-6-13
@@ -2517,7 +2517,7 @@ spec:
 
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-tag-release-v2-6-13
@@ -2624,7 +2624,7 @@ spec:
         fi
         echo -n "${NEW_TAG}" | tee $(results.tag.path)
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-gitops-with-pr-v2-6-13
@@ -2859,7 +2859,7 @@ spec:
           curl -u ${GIT_AUTH_USER}:${GIT_AUTH_PWD} -d '{"title":"PR to promote to next environment","base":"'${GIT_BRANCH}'", "head":"'${GIT_ORG}':cntk-ci-pipeline-'${APP_NAME}'-'${VERSION}'"}' ${GIT_PUSH_URL}
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-deploy-v2-6-13
@@ -3071,7 +3071,7 @@ spec:
           done
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-setup-v2-6-13
@@ -3353,7 +3353,7 @@ spec:
         for f in /tekton/results/*; do echo "results.$(basename $f)=$(cat $f)"; done
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-java-maven-test-v2-6-13
@@ -3479,7 +3479,7 @@ spec:
           fi
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-helm-release-v2-6-13
@@ -3770,7 +3770,7 @@ spec:
 
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-operator-gitops-v2-6-13
@@ -3962,7 +3962,7 @@ spec:
         git push -v
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-img-scan-v2-6-13
@@ -4144,7 +4144,7 @@ spec:
             cat va-result.json | jq -r '.[]'
           fi
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Task
 metadata:
   name: ibm-gitops-v2-6-13
@@ -4381,7 +4381,7 @@ spec:
           git push -v
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-ace-bar
@@ -4580,7 +4580,7 @@ spec:
       name: ibm-gitops
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-mq
@@ -4727,7 +4727,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-golang-edge
@@ -4927,7 +4927,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-appmod-liberty
@@ -5140,7 +5140,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-nodejs
@@ -5344,7 +5344,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-general
@@ -5550,7 +5550,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-golang
@@ -5752,7 +5752,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-java-gradle
@@ -5976,7 +5976,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-operator-catalog
@@ -6049,7 +6049,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-operator
@@ -6164,7 +6164,7 @@ spec:
           value: "$(tasks.setup.results.tools-image)"
 
 ---
-apiVersion: tekton.dev/v11
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: ibm-java-maven

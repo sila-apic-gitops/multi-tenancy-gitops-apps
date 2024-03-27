@@ -1,4 +1,4 @@
-apiVersion: triggers.tekton.dev/v11
+apiVersion: triggers.tekton.dev/v1
 kind: EventListener
 metadata:
   name: ace-config
