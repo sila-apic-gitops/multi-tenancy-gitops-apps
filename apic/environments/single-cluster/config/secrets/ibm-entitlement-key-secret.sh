@@ -22,4 +22,4 @@ oc create secret docker-registry ibm-entitlement-key \
 kubeseal -n tools --controller-name=${SEALED_SECRET_CONTOLLER_NAME} --controller-namespace=${SEALED_SECRET_NAMESPACE} -o yaml < delete-ibm-entitlement-key-secret.yaml > ibm-entitlement-key-secret.yaml
 
 # NOTE, do not check delete-ibm-entitled-key-secret.yaml into git!
-#rm delete-ibm-entitlement-key-secret.yaml
+rm delete-ibm-entitlement-key-secret.yaml
